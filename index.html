@@ -21,7 +21,9 @@
       // On success, the video element is set to a camera image and played back.
       const videoElm = document.getElementById('my-video');
       videoElm.srcObject = stream;
-      videoElm.play();
+      setTimeout(() => {
+        videoElm.play();
+      }, 1000);
       // Save the camera image to a global variable so that it can be returned to the other party when a call comes in.
       localStream = stream;
     }).catch( error => {
@@ -53,7 +55,10 @@
         // Set a camera image to the video element and play it
         const videoElm = document.getElementById('their-video')
         videoElm.srcObject = stream;
-        videoElm.play();
+        setTimeout(() => {
+          videoElm.play();
+        }, 1000);
+        
       });
     }
 
